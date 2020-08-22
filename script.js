@@ -46,6 +46,46 @@ function getCharacters() {
     } 
 }
 
+ // Make userPreferences array;
+ var userPreferences = [];
+
+ function makeUserPreferences() {
+ 
+   if (hasLowercase) {
+     userPreferences.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+   }
+ 
+   if (hasUppercase) {
+     userPreferences.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+   }
+ 
+   if (hasNumbers) {
+     userPreferences.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+   } 
+ 
+   if (hasSpecialChar) {
+     userPreferences.push('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '//', ']', '^', ';', '`', '{', '|', '}', '~');
+   }
+ }
+
+
+//  Create password from userPreferences array
+var password = "";
+
+function createPassword () {
+  for (var i = 0; i <= passwordLength; i++) {
+    password += userPreferences.charAt(Math.floor(Math.random() *));
+}
+
+
+// Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+
+//   passwordText.value = password;
+// }
+
 
 // Generate password function 
 function generatePassword () {
@@ -59,55 +99,12 @@ function generatePassword () {
   console.log(hasSpecialChar);
   makeUserPreferences();
   console.log(userPreferences);
+  createPassword
+  console.log(password)
+  // writePassword();
+  // console.log(password);
 }
 
-
-
-  // Make userPreferences array;
-var userPreferences = [];
-
-function makeUserPreferences() {
-
-  if (hasLowercase) {
-    userPreferences.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
-  }
-
-
-  if (hasUppercase) {
-    userPreferences.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-  }
-
-  if (hasNumbers) {
-    userPreferences.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-  } 
-
-  if (hasSpecialChar) {
-    userPreferences.push('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '//', ']', '^', ';', '`', '{', '|', '}', '~');
-  }
-}
-
-// for (var i = 0; i <= passwordLength; i++) {
-
-// }
-
-
-  
-  
-  
-//   for ( var i = 0; i < length; i++ ) {
-//    .push options.(Math.floor(Math.random() * ));
-// }
-// return password;
-
-
-// Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-  
-
-  // passwordText.value = password;
-// }user
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
