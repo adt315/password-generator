@@ -13,6 +13,7 @@ function getPasswordOptions() {
   console.log(passwordLength);
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a length between 8 and 128 characters");
+
   }
   var hasLowercase = confirm("Do you want your password to include lowercase letters?");
   console.log(hasLowercase);
@@ -42,8 +43,8 @@ function generatePassword () {
   var options = getPasswordOptions();
   console.log(options);
 
-  var options = [];
-  var passwordLength = options.length;
+  // var options = [];
+  // var  = options.length;
   
   // if()
   //else()
