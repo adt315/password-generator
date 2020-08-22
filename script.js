@@ -35,7 +35,7 @@ function getCharacters() {
   var initialNumbers = confirm("Do you want your password to include numbers?");
   var initialSpecialChar = confirm("Do you want your password to include special characters?");
 
-    if (initialLowercase === true || initialUppercase === true || initialNumbers === true || initialSpecialChar === true) {
+    if (initialLowercase || initialUppercase || initialNumbers || initialSpecialChar) {
       hasLowercase = initialLowercase;
       hasUppercase = initialUppercase;
       hasNumbers = initialNumbers;
@@ -49,6 +49,7 @@ function getCharacters() {
 
 // Generate password function 
 function generatePassword () {
+  userPreferences.length = 0;
   getLength();
   console.log(passwordLength);
   getCharacters();
@@ -56,29 +57,34 @@ function generatePassword () {
   console.log(hasUppercase);
   console.log(hasNumbers);
   console.log(hasSpecialChar);
+  makeUserPreferences();
+  console.log(userPreferences);
 }
 
 
 
-  var userPreferences;
-  var userPreferences = [];
+  // Make userPreferences array;
+var userPreferences = [];
 
-if (hasLowercase = true) {
-   userPreferences.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+function makeUserPreferences() {
+
+  if (hasLowercase) {
+    userPreferences.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+  }
+
+
+  if (hasUppercase) {
+    userPreferences.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+  }
+
+  if (hasNumbers) {
+    userPreferences.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+  } 
+
+  if (hasSpecialChar) {
+    userPreferences.push('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '//', ']', '^', ';', '`', '{', '|', '}', '~');
+  }
 }
-
-if (hasUppercase = true) {
-  userPreferences.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-}
-
-if (hasNumbers = true) {
-  userPreferences.push(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-}
-
-if (hasSpecialChar = true) {
-  userPreferneces.push('!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '//', ']', '^', ';', '`', '{', '|', '}', '~');
-}
-
 
 // for (var i = 0; i <= passwordLength; i++) {
 
@@ -95,28 +101,13 @@ if (hasSpecialChar = true) {
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
+  
 
-  passwordText.value = password;
-}
+  // passwordText.value = password;
+// }user
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
-
-
-// function getPasswordOptions() {
-//   var passwordOptions = {
-//     passwordLength: passwordLength,
-//     hasLowercase: hasLowercase,
-//     hasUppercase: hasUppercase,
-//     hasNumbers: hasNumbers,
-//     hasSpecialChar: hasSpecialChar
-//   }
-//   return passwordOptions
-// }
-
-//   var options = getPasswordOptions();
-//   console.log(options);
- 
