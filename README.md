@@ -35,6 +35,8 @@ THEN the password is either displayed in an alert or written to the page
 
 https://adt315.github.io/password-generator/
 
+![Image of Password Generator](./assets/password-generator-screeshot)
+
 
 
 
