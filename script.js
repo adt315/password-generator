@@ -70,12 +70,13 @@ function getCharacters() {
 
 
 // Create password from userPreferences array
-var password = [];
+var password = "";
 
 function createPassword () {
   for (var i = 0; i < passwordLength; i++) {
-    password.push(userPreferences[Math.floor(Math.random() * (userPreferences.length-1))]);
+    password += userPreferences[Math.floor(Math.random() * (userPreferences.length-1))];
     }
+  
 }
 
 // Write password to the #password input
