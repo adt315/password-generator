@@ -8,7 +8,7 @@ var specialChar = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '
 
 
 // Get length of password from user input
-var passwordLength = 8;
+var passwordLength = 0;
 
 function getLength() {
   var initialLength = prompt("How many characters would you like your password to be?           (Password must be between 8 and 128 characters)");
@@ -69,7 +69,7 @@ function getCharacters() {
  }
 
 
-//  Create password from userPreferences array
+// Create password from userPreferences array
 var password = [];
 
 function createPassword () {
@@ -79,17 +79,17 @@ function createPassword () {
 }
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
-// }
+  passwordText.value = password;
+}
 
 
 // Generate password function 
 function generatePassword () {
   userPreferences.length = 0;
+  password.length = 0;
   getLength();
   console.log(passwordLength);
   getCharacters();
@@ -101,8 +101,7 @@ function generatePassword () {
   console.log(userPreferences);
   createPassword();
   console.log(password);
-  // writePassword();
-  // console.log(password);
+  writePassword();
 }
 
 
