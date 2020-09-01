@@ -10,15 +10,4 @@ The objective of this project was to create an application that generates a rand
 
 https://adt315.github.io/password-generator/
 
-![Image of Password Generator](password-generator-screeshot.png)
-
-
-
-
-
-
-
-
-
-
-
+![Password Generator Screenshot](https://user-images.githubusercontent.com/51940058/91848515-b9e71e80-ec28-11ea-855d-d403496ab554.png)
